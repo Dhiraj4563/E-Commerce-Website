@@ -1,0 +1,267 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('image/bg.avif'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the image */
+    color: #fff; /* Makes text white for better visibility */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for better text visibility */
+    color: #fff;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    position: relative; /* Ensures header is positioned relative to its parent */
+    z-index: 1; /* Places header above other content */
+}
+
+/* Business Logo and Name */
+.business-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.business-name {
+    margin: 0;
+}
+
+.social-media-icons {
+    display: flex;
+    margin-top: 10px; /* Adds space when wrapping occurs */
+    width: 50px;
+    height: auto;
+}
+
+.social-media-icons a {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Search Bar */
+.search-bar {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
+    display: flex;
+    justify-content: center; /* Centers the search bar horizontally */
+    align-items: center; /* Centers the content vertically */
+    position: relative;
+    z-index: 1; /* Ensures search bar is above other content */
+}
+
+.search-bar input[type="text"] {
+    width: 50%; /* Adjust this percentage to control the width of the search bar */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#search-results {
+    background-color: rgba(255, 255, 255, 0.9); /* Match the background transparency */
+    margin-top: 5px;
+    position: absolute;
+    width: 50%; /* Match the width of the search bar */
+    left: 25%; /* This centers the search results below the search bar */
+}
+
+#search-results div {
+    padding: 10px;
+    cursor: pointer;
+    color: #333; /* Dark text for contrast */
+}
+
+#search-results div:hover {
+    background-color: #ddd;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex: 1; /* Ensures it takes up the remaining space */
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for text visibility */
+    padding: 20px;
+    width: 200px;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    color: #fff; /* White text for visibility */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    cursor: pointer;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Lighter border color */
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight hover effect */
+}
+
+/* Item Display */
+.item-display {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background to improve text visibility */
+}
+
+#item-details {
+    margin-bottom: 20px;
+    color: #fff; /* White text for visibility */
+}
+
+.homepage-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.homepage-item {
+    text-align: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9); /* White background to contrast with the body */
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners for items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    color: #333; /* Dark text for contrast */
+}
+
+.item-image {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    background-color: #fff; /* White background for images to match item background */
+    border-radius: 8px; /* Rounded corners for images */
+    transition: transform 0.3s;
+}
+
+.item-image:hover {
+    transform: scale(1.05);
+}
+
+/* Order Process */
+#order-process, #order-confirmation {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for text visibility */
+    margin-top: 20px;
+    color: #fff; /* White text for visibility */
+}
+
+#confirm-order {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .homepage-items {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    #search-results {
+        width: 70%; /* Adjust width for smaller screens */
+        left: 15%; /* Adjust positioning */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .homepage-items {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    #search-results {
+        width: 80%; /* Adjust width for smaller screens */
+        left: 10%; /* Adjust positioning */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .social-media-icons {
+        margin-top: 5px;
+        justify-content: center;
+    }
+
+    .sidebar {
+        padding: 10px;
+    }
+
+    .homepage-items {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+
+    .item-image {
+        max-width: 150px;
+    }
+
+    #search-results {
+        width: 90%; /* Adjust width for smaller screens */
+        left: 5%; /* Adjust positioning */
+    }
+}
